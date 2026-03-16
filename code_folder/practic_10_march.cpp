@@ -1,4 +1,4 @@
-#include <iostream>
+#include <iostream>           //6 вариант
 #include <string>
 using namespace std;
 
