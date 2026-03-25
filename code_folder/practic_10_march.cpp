@@ -1,4 +1,4 @@
-#include <iostream>           //6 вариант
+#include <iostream>    // 6 варинат
 #include <string>
 using namespace std;
 
@@ -15,6 +15,11 @@ class Animal {
             setType(typeVal);
             setAge(ageVal);
             setStatus(statusVal);
+        }
+
+        // деструктор
+        ~Animal() {
+            cout << "Объект Animal с кличкой '" << name << "' удалён." << endl;
         }
 
         //геттеры
@@ -61,21 +66,21 @@ class Animal {
             }
         }
 
-        //обновление возраста и статуса
         void updateAge(int newAge) {
             setAge(newAge);
             if (age == newAge) {
                 cout << "Возраст животного " << name << " обновлён на " << age << endl;
             }
         }
+
         void updateStatus() {
-        if (status == "в приюте") {
-            status = "пристроен";
-            cout << "Статус животного " << name << " обновлён на 'пристроен'" << endl;
-        } 
-        else {
-            cout << "Животное " << name << " уже пристроено" << endl;
-        }
+            if (status == "в приюте") {
+                status = "пристроен";
+                cout << "Статус животного " << name << " обновлён на 'пристроен'" << endl;
+            } 
+            else {
+                cout << "Животное " << name << " уже пристроено" << endl;
+            }
         }
 
         void printInfo() const {
@@ -98,5 +103,6 @@ int main() {
     animal.updateAge(6);
     animal.updateStatus();
     animal.printInfo();
+
     return 0;
 }
